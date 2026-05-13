@@ -32,3 +32,38 @@ model Session {
   refreshToken        String?
   refreshTokenExpires DateTime?
 }
+
+model Audit {
+  id                 String   @id @default(uuid())
+  shop               String
+  url                String
+  pageType           String   @default("homepage")
+  status             String   @default("pending")
+  errorMessage       String?
+
+  performanceScore   Int?
+  seoScore           Int?
+  accessibilityScore Int?
+  bestPracticesScore Int?
+  overallScore       Int?
+
+  pagespeedData      String?
+  fetchData          String?
+  rulesData          String?
+  screenshotDataUri  String?
+
+  themeName          String?
+  themeId            String?
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([shop])
+  @@index([shop, createdAt])
+}
+
+model Settings {
+  id              String  @id @default(uuid())
+  shop            String  @unique
+  pagespeedApiKey String?
+}
