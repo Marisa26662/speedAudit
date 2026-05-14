@@ -433,6 +433,7 @@ export default function AuditReport() {
                     <s-heading>Core Web Vitals</s-heading>
                     <MetricRow label="Largest Contentful Paint (LCP)" value={psi.metrics.lcp.displayValue} good={psi.metrics.lcp.value <= 2500} />
                     <MetricRow label="Cumulative Layout Shift (CLS)" value={psi.metrics.cls.displayValue} good={psi.metrics.cls.value <= 0.1} />
+                    <MetricRow label="Interaction to Next Paint (INP)" value={psi.metrics.inp?.displayValue ?? "N/A"} good={(psi.metrics.inp?.value ?? 0) <= 200} />
                     <MetricRow label="Total Blocking Time (TBT)" value={psi.metrics.tbt.displayValue} good={psi.metrics.tbt.value <= 200} />
                     <MetricRow label="First Contentful Paint (FCP)" value={psi.metrics.fcp.displayValue} good={psi.metrics.fcp.value <= 1800} />
                     <MetricRow label="Speed Index" value={psi.metrics.si.displayValue} good={psi.metrics.si.value <= 3400} />

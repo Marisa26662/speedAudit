@@ -8,6 +8,7 @@ export interface PSIMetrics {
   si: { value: number; displayValue: string };
   tti: { value: number; displayValue: string };
   ttfb: { value: number; displayValue: string };
+  inp: { value: number; displayValue: string };
 }
 
 export interface PSIAuditItem {

@@ -125,6 +125,7 @@ export async function runPageSpeedAnalysis(
         si: safeMetric(audits, "speed-index"),
         tti: safeMetric(audits, "interactive"),
         ttfb: safeMetric(audits, "server-response-time"),
+        inp: safeMetric(audits, "interaction-to-next-paint"),
       },
       audits: {
         renderBlocking: safeAudit(audits, "render-blocking-resources"),
